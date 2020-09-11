@@ -58,5 +58,5 @@ public class Item {
          public String toString() {
                   return "Item{" + "rid=" + rid + ", name=" + name + ", description=" + description + ", price=" + price + ", quantity=" + quantity + '}';
          }
-         
+
 }

@@ -45,4 +45,19 @@ public class ItemDao {
                   }
          }
 
+         public void insertItem(Item item)  throws ConnectionException {
+                   String query = "INSERT INTO item (name, description, price, quantity ) VALUES (?,?,?,?)";
+                  try (Connection conn = provider.openConnection()) {
+                           PreparedStatement statement = conn.prepareStatement(query);
+                           int index = 1;
+                           statement.setString(index++, item.getName());
+                           statement.setString(index++, item.getDescription());
+                           statement.setDouble(index++, item.getPrice().doubleValue());
+                           statement.setInt(index++, item.getQuantity());
+                           statement.executeUpdate();
+                  } catch (SQLException ex) {
+                           throw new ConnectionException(ex.getMessage());
+                  }
+         }
+
 }

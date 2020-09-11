@@ -6,11 +6,11 @@ import java.util.ResourceBundle;
  *
  * @author Ricardo Martínez Merlo <ic.ricardo.merlo@gmail.com>
  */
-public class Configuration {
+public class MySqlConfig {
     
     private final ResourceBundle properties;
 
-    public Configuration() {
+    public MySqlConfig() {
         properties = ResourceBundle.getBundle("com.balend.ecommerce.properties.Configuration");
     }
     
